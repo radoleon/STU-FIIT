@@ -8,3 +8,6 @@ This repository contains some of the assignments that I completed during my stud
 - [MIP - Methods of Engineering Work](/MIP)
 
 > **year 1, semester 2**
+
+- [OOP - Object Oriented Programming](/OOP)
+- [DSA - Data Structures and Algorithms](/DSA)
