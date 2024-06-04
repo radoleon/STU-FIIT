@@ -1,0 +1,56 @@
+.warning-container {
+    -fx-background-color: #dbdbdb;
+}
+
+.warning-icon {
+    -fx-background-color: #660d0d;
+}
+
+.post-container {
+    -fx-border-width: 0 0 0 5px;
+    -fx-background-color: #fff;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.post.high-ratio {
+    -fx-border-color: #149614;
+}
+
+.post.medium-ratio {
+    -fx-border-color: #0845a1;
+}
+
+.post.low-ratio {
+    -fx-border-color: #bd0c0c;
+}
+
+.post.voted-for .for-button {
+    -fx-text-fill: #149614;
+}
+
+.post.voted-against .against-button {
+    -fx-text-fill: #bd0c0c;
+}
+
+.own-post {
+    -fx-border-color: #939393;
+}
+
+.own-post .type-label {
+    -fx-text-fill: #939393;
+}
+
+.new-post {
+    -fx-border-color: #000;
+}
+
+.new-post .type-label {
+    -fx-text-fill: #000;
+}
+
+.hidden .ratio-label {
+    -fx-text-fill: #fff;
+}

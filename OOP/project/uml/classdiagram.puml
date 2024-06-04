@@ -1,0 +1,225 @@
+@startuml suggestpolls
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+class GuiError{
+    - title : String
+    + GuiError(e : Exception, title : String)
+    + displayError() : void
+}
+GuiError --|> Error
+class DashboardController{
+    + primaryStage : Stage
+    - logoutButton : Button
+    - usernameLabel : Label
+    - titleField : TextField
+    - descriptionField : TextArea
+    - createButton : Button
+    - postsContainer : ScrollPane
+    - postCountLabel : Label
+    - ownCountLabel : Label
+    - newCountLabel : Label
+    + initialize() : void
+    + handleLogout() : void
+    + handleCreate() : void
+    + showDashboardScene() : void
+    + showPosts() : void
+    + loadPost(container : VBox, post : Post) : void
+}
+DashboardController ..|> DashboardObserver
+class Error{
+    # exception : Exception
+    + Error(e : Exception)
+    + displayError() : void
+}
+class EventHandler{
+    - databaseHandler : DatabaseHandler
+    - postsInstance : Posts
+    - userInstance : User
+    + createPost(title : String, description : String) : boolean
+    + voteFor(id : String, votesFor : List<String>, votesAgainst : List<String>) : boolean
+    + voteAgainst(id : String, votesFor : List<String>, votesAgainst : List<String>) : boolean
+    + deletePost(id : String) : boolean
+}
+class OwnPost{
+    + OwnPost(id : String, uid : String, username : String, title : String, description : String, votesFor : List<String>, votesAgainst : List<String>)
+    + voteFor() : boolean
+    + voteAgainst() : boolean
+    + deletePost() : boolean
+}
+OwnPost --|> Post
+class DatabaseHandler{
+    - connection : Connection
+    - statement : PreparedStatement
+    + connect() : void
+    + disconnect() : void
+    + addUser(uid : String, username : String, password : String) : boolean
+    + getUser(username : String) : ResultSet
+    + addPost(id : String, title : String, description : String) : boolean
+    + deletePost(id : String) : boolean
+    + getPosts() : ResultSet
+    + updateVotes(id : String, votesFor : String[], votesAgainst : String[]) : boolean
+}
+class Authentication{
+    - databaseHandler : DatabaseHandler
+    + login(username : String, password : String) : boolean
+    + logout() : void
+}
+class Posts{
+    - {static} instance : Posts
+    - databaseHandler : DatabaseHandler
+    - posts : List<Post>
+    - Posts()
+    + {static} getInstance() : Posts
+    + sortPosts() : void
+    + getPosts() : List<Post>
+    + removePostsDetails() : void
+}
+class NewPost{
+    - hidden : boolean
+    + NewPost(id : String, uid : String, username : String, title : String, description : String, votesFor : List<String>, votesAgainst : List<String>)
+    + calculateRatio(votesFor : List<String>, votesAgainst : List<String>) : void
+    + getHidden() : boolean
+}
+NewPost --|> Post
+class LoginController{
+    + primaryStage : Stage
+    - usernameField : TextField
+    - passwordField : PasswordField
+    - loginButton : Button
+    + initialize() : void
+    - handleLogin() : void
+    + showLoginScene() : void
+}
+class App{
+    + start(primaryStage : Stage) : void
+    + {static} main(args : String[]) : void
+}
+class PostController{
+    - post : Post
+    - observer : DashboardObserver
+    - postContainer : AnchorPane
+    - titleLabel : Label
+    - descriptionLabel : Label
+    - typeLabel : Label
+    - ratioLabel : Label
+    - ownerLabel : Label
+    - forButton : Button
+    - againstButton : Button
+    - deleteButton : Button
+    + initialize() : void
+    + handleVoteFor() : void
+    + handleVoteAgainst() : void
+    + handleDelete() : void
+    + setPost(post : Post) : void
+    + setObserver(dashboardObserver : DashboardObserver) : void
+    + updatePostVisuals() : void
+}
+PostController ..|> PostSubject
+class Post{
+    - id : String
+    - uid : String
+    - username : String
+    - title : String
+    - description : String
+    - votesFor : List<String>
+    - votesAgainst : List<String>
+    # ratio : float
+    + Post(id : String, uid : String, username : String, title : String, description : String, votesFor : List<String>, votesAgainst : List<String>)
+    + getUid() : String
+    + getId() : String
+    + getVotesFor() : List<String>
+    + getVotesAgainst() : List<String>
+    + getUsername() : String
+    + getTitle() : String
+    + getDescription() : String
+    + getRatio() : float
+    + voteFor() : boolean
+    + voteAgainst() : boolean
+    + deletePost() : boolean
+    + calculateRatio(votesFor : List<String>, votesAgainst : List<String>) : void
+}
+Post ..|> PostInterface
+class User{
+    - {static} instance : User
+    - uid : String
+    - username : String
+    - User(uid : String, username : String)
+    + {static} getInstance(uid : String, username : String) : User
+    + {static} getInstance() : User
+    + getUsername() : String
+    + getUid() : String
+    + setUsername(username : String) : void
+    + setUid(uid : String) : void
+    + removeUserDetails() : void
+}
+class StageState{
+    - {static} primaryStage : Stage
+    + {static} setPrimaryStage(stage : Stage) : void
+    + {static} getPrimaryStage() : Stage
+}
+interface PostSubject{
+    ~ notifyObserver(observer : DashboardObserver) : void
+}
+interface DashboardObserver{
+    + showPosts() : void
+    + ~ updatePosts() : void
+}
+interface PostInterface{
+    + deletePost() : boolean
+    + voteFor() : boolean
+    + voteAgainst() : boolean
+    + calculateRatio(votesFor : List<String>, votesAgainst : List<String>) : void
+}
+
+Authentication -up- Posts
+Authentication -up- DatabaseHandler
+Authentication -up- GuiError
+Authentication -up- User
+
+DashboardController -up- Authentication
+DashboardController -up- User
+DashboardController -up- OwnPost
+DashboardController -up- NewPost
+DashboardController -up- Post
+DashboardController -up- Posts
+DashboardController -up- StageState
+DashboardController -up- Error
+DashboardController -up- EventHandler
+
+LoginController -up- Authentication
+LoginController -up- StageState
+LoginController -up- Error
+
+PostController -up- User
+PostController -up- Post
+PostController -up- NewPost
+PostController -up- OwnPost
+PostController -up- DashboardObserver
+
+OwnPost -up- GuiError
+OwnPost -up- EventHandler
+
+Post -up- GuiError
+Post -up- EventHandler
+
+Posts -up- NewPost
+Posts -up- OwnPost
+Posts -up- Post
+Posts -up- User
+Posts -up- Error
+Posts -up- DatabaseHandler
+
+DatabaseHandler -up- User
+DatabaseHandler -up- Error
+
+EventHandler -up- Posts
+EventHandler -up- Post
+EventHandler -up- OwnPost
+EventHandler -up- NewPost
+EventHandler -up- User
+EventHandler -up- DatabaseHandler
+EventHandler -up- GuiError
+
+App -up- StageState
+@enduml
