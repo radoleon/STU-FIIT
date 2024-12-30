@@ -11,3 +11,8 @@ This repository contains some of the assignments that I completed during my stud
 
 - [OOP - Object Oriented Programming](/OOP)
 - [DSA - Data Structures and Algorithms](/DSA)
+
+> **year 2, semester 1**
+
+- [PKS - Computer Networks](/PKS)
+- [UI - Artificial Intelligence](/UI)
