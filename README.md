@@ -16,3 +16,9 @@ This repository contains some of the assignments that I completed during my stud
 
 - [PKS - Computer Networks](/PKS)
 - [UI - Artificial Intelligence](/UI)
+
+> **year 2, semester 2**
+
+- [DBS - Database Systems](/DBS)
+- [WTECH - Fundamentals of Web Technologies](/WTECH)
+- [RUST - Programming in Rust](/RUST)
