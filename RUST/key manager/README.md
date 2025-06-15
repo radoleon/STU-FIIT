@@ -177,5 +177,8 @@ trunk serve
 
 ![](https://github.com/user-attachments/assets/8debe1ed-8008-452a-a5e1-abd79c85cd14)
 
-## Authors
-Leon Rado, Dokaniev Andrii
+### Technologies
+![](https://skillicons.dev/icons?i=rust,postgres)
+
+> [!NOTE]
+> This project was developed as a team collaboration between two developers.
