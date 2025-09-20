@@ -77,7 +77,7 @@ reqwest = { version = "0.11", features = ["json"] }
 ## 🏗️ Architecture
 The Key Manager application follows a client-server architecture with clear separation of concerns:
 
-![](https://github.com/user-attachments/assets/014b2399-aaed-4994-90bd-329fe26d8b17)
+![](https://github.com/user-attachments/assets/097c0538-9cbe-4180-8235-4317ca216add)
 
 The diagram shows how the frontend (Yew/WebAssembly) and automated tasks interact with various backend components through the Rocket web server. The system integrates security features, key management functionality, email services, and database operations in a structured way.
 
@@ -167,18 +167,18 @@ trunk serve
 ## 🦀 Showcase
 > Dashboard
 
-![](https://github.com/user-attachments/assets/57c0e122-2a59-4c95-b02a-932d11c8f4d0)
+![](https://github.com/user-attachments/assets/e48a160c-451b-4186-ba23-d6826d5cf9b9)
 
 > Add Key
 
-![](https://github.com/user-attachments/assets/68e25bcb-f259-44ec-9ee5-a00cdb8d112f)
+![](https://github.com/user-attachments/assets/9199c14e-a61a-40ab-a4c5-d816d2669d01)
 
 > Key Detail
 
-![](https://github.com/user-attachments/assets/8debe1ed-8008-452a-a5e1-abd79c85cd14)
+![](https://github.com/user-attachments/assets/6518559a-ea50-46e7-bb58-0a2fbdf51f71)
 
 ### Technologies
 ![](https://skillicons.dev/icons?i=rust,postgres)
 
-> [!NOTE]
+> [!IMPORTANT]
 > This project was developed as a team collaboration between two developers.
