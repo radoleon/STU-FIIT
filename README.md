@@ -22,3 +22,8 @@ This repository contains some of the assignments that I completed during my stud
 - [DBS - Database Systems](/DBS)
 - [WTECH - Fundamentals of Web Technologies](/WTECH)
 - [RUST - Programming in Rust](/RUST)
+
+> **year 3, semester 1**
+- [AZA - Analysis and Complexity of Algorithms](/AZA)
+- [VPWA - Progressive Web Application Development](/VPWA)
+- [PIB - Principles of Information Security](/PIB)
