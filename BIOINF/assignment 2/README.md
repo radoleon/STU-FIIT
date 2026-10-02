@@ -40,9 +40,9 @@ variability rather than a tumor profile, and the results do not support the pres
 mutation in this sample.
 
 ### Showcase
-> Oncoplot
+> MAF Summary
 
-![]()
+<img width="1920" height="1020" alt="" src="https://github.com/user-attachments/assets/4a8bf552-35ca-41e5-b49c-26040d9d8b8c" />
 
 ### How to Reproduce
 Required tools: FastQC, BWA, samtools, bcftools, GATK, Qualimap, Strelka and hap.py (run through Docker),
