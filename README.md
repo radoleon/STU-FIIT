@@ -27,3 +27,7 @@ This repository contains some of the assignments that I completed during my stud
 - [AZA - Analysis and Complexity of Algorithms](/AZA)
 - [VPWA - Progressive Web Application Development](/VPWA)
 - [PIB - Principles of Information Security](/PIB)
+
+> **year 3, semester 2**
+- [BIOINF - Introduction to Bioinformatics](/BIOINF)
+- [BP2 - Bachelor's Thesis](/BP2)
