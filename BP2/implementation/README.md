@@ -66,19 +66,12 @@ in tasks related to configuration and product derivation, and to variable code m
 ### Showcase
 > Editor
 
-![]()
+<img width="866" height="827" alt="" src="https://github.com/user-attachments/assets/81dfd77c-14d9-4195-90ab-b1882de03638" />
 
-> Configuration
-
-![]()
-
-> Feature Model
-
-![]()
 
 > Results
 
-![]()
+<img width="315" height="315" alt="" src="https://github.com/user-attachments/assets/8e31c3a4-5e51-4187-91c7-285c4ca388b3" />
 
 ### License
 The source code is licensed under the _Apache 2.0_ license.
