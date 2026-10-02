@@ -1,0 +1,14 @@
+Length:........................................148
+Matches:.......................................135
+Mismatches:.....................................11
+Gaps:............................................2
+Identity:.....................................0.91
+Similarity:......................................5
+
+MVHLTDAEKAAVS-CLWGKVNSDEVGGEALGRLLVVYPWTQRYFDSFGDLSSASAIMGNAKVKAHGKKVITAFNDGLNHLDSLKGTFASLSELHCDKLHV
+||||||||||||:  ||||||.|:|||||||||||||||||||||||||||||||||||.||||||||||.||||||.|||:||||||.|||||||||||
+MVHLTDAEKAAVNG-LWGKVNPDDVGGEALGRLLVVYPWTQRYFDSFGDLSSASAIMGNPKVKAHGKKVINAFNDGLKHLDNLKGTFAHLSELHCDKLHV
+
+DPENFRLLGNMIVIVLGHHLGKDFTPAAQAAFQKVVAGVATALAHKYH
+||||||||||||||||||||||:|||.|||||||||||||:|||||||
+DPENFRLLGNMIVIVLGHHLGKEFTPCAQAAFQKVVAGVASALAHKYH
